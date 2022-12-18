@@ -42,6 +42,15 @@ class AuthService {
     }
   }
 
+  Future<void> signOut() async {
+    try{
+      return await auth.signOut();
+    }catch(e){
+      debugPrint(e.toString());
+      return;
+    }
+  }
+
   UserModel _userFromFireBase(User? user){
     return user != null ? UserModel(id: user.uid) : UserModel();
   }
