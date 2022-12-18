@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "57733478969",
+    "project_id": "twitter-3feec",
+    "storage_bucket": "twitter-3feec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57733478969:android:85bf79d40e475f7d4eebe8",
+        "android_client_info": {
+          "package_name": "com.pahuja.twitter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57733478969-lnv6v1ka5aaamhbia8hiudd248f5fgnq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pahuja.twitter",
+            "certificate_hash": "d5a5ffa8d08ff00fdf630a743f9577a50a3c874d"
+          }
+        },
+        {
+          "client_id": "57733478969-jdtbvl9132kmh601iehnpo3oq249urbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXlF7BdrOJqj3MnTVy6kOtTji0UvlvHBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57733478969-jdtbvl9132kmh601iehnpo3oq249urbp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "57733478969-jd9cvdas3orbaq189cseb91al1jdoq3h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pahuja.twitterClone"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57733478969:android:ca5960199cb7f0c14eebe8",
+        "android_client_info": {
+          "package_name": "com.pahuja.twitter_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57733478969-jdtbvl9132kmh601iehnpo3oq249urbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXlF7BdrOJqj3MnTVy6kOtTji0UvlvHBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57733478969-jdtbvl9132kmh601iehnpo3oq249urbp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "57733478969-jd9cvdas3orbaq189cseb91al1jdoq3h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pahuja.twitterClone"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
