@@ -11,6 +11,43 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   FirebaseAuth auth = FirebaseAuth.instance;
 
+  Future<void> signUpAction({required String emailAddress, required String password}) async {
+    try {
+      final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailAddress,
+        password: password,
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        debugPrint('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        debugPrint('The account already exists for that email.');
+      }
+    } catch (e) {
+      debugPrint('error $e');
+    }
+  }
+
+  Future<void> signInAction({required String emailAddress, required String password}) async {
+    try {
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailAddress,
+        password: password,
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        debugPrint('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        debugPrint('The account already exists for that email.');
+      }
+    } catch (e) {
+      debugPrint('error $e');
+    }
+  }
+
+
+
+
   String email = '';
   String password = '';
 
@@ -41,7 +78,13 @@ class _SignUpState extends State<SignUp> {
                 onPressed: () async {
                   await signUpAction(emailAddress: email, password: password);
                 },
-                child: const Text('Signup'),
+                child: const Text('SignUp'),
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  await signInAction(emailAddress: email, password: password);
+                },
+                child: const Text('SignIn'),
               )
             ],
           ),
@@ -51,19 +94,3 @@ class _SignUpState extends State<SignUp> {
   }
 }
 
-Future<void> signUpAction({required String emailAddress, required String password}) async {
-  try {
-    final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: emailAddress,
-      password: password,
-    );
-  } on FirebaseAuthException catch (e) {
-    if (e.code == 'weak-password') {
-      debugPrint('The password provided is too weak.');
-    } else if (e.code == 'email-already-in-use') {
-      debugPrint('The account already exists for that email.');
-    }
-  } catch (e) {
-    debugPrint('error $e');
-  }
-}
