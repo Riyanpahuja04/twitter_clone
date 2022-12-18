@@ -5,6 +5,10 @@ import 'package:twitter_clone/models/user.dart';
 class AuthService {
   FirebaseAuth auth = FirebaseAuth.instance;
 
+  Stream<UserModel> get user{
+    return auth.authStateChanges().map(_userFromFireBase);
+  }
+
   Future<void> signUpAction({required String emailAddress, required String password}) async {
     try {
       final user = await auth.createUserWithEmailAndPassword(
@@ -38,7 +42,7 @@ class AuthService {
     }
   }
 
-  UserModel? _userFromFireBase(User? user){
-    return user != null ? UserModel(id: user.uid) : null;
+  UserModel _userFromFireBase(User? user){
+    return user != null ? UserModel(id: user.uid) : UserModel();
   }
 }

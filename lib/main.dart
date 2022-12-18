@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:twitter_clone/screens/auth/signup.dart';
+import 'package:provider/provider.dart';
+import 'package:twitter_clone/models/user.dart';
+import 'package:twitter_clone/services/auth/auth.dart';
+import 'package:twitter_clone/services/wrapper.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -34,12 +37,12 @@ class MyApp extends StatelessWidget {
           }
 
           if (snapshot.connectionState == ConnectionState.done) {
-            return MaterialApp(
-              title: 'Flutter Demo',
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
+            return StreamProvider<UserModel>.value(
+              value: AuthService().user,
+              initialData: UserModel(),
+              child: const MaterialApp(
+                home: Wrapper(),
               ),
-              home: const SignUp(),
             );
           }
           return MaterialApp(

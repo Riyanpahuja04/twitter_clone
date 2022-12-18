@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/services/auth.dart';
+import 'package:twitter_clone/services/auth/auth.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
