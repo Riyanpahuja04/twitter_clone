@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:twitter_clone/auth/signup.dart';
+import 'package:twitter_clone/screens/auth/signup.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
